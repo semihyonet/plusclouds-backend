@@ -18,7 +18,11 @@
 	},
 	"devDependencies": {},
 	"scripts": {
-		"dev": "nodemon index"
+		"dev": "nodemon index",
+		"start": "node index.js"
+	},
+	"engines": {
+		"node": "10.x"
 	},
 	"repository": {
 		"type": "git",

@@ -14,6 +14,11 @@ const sequelize = require("./db/mysql");
 const app = express();
 
 const cors = require("cors");
+
+var http = require("http");
+
+var httpServer = http.createServer(app);
+
 app.use(cors());
 
 app.use(bodyParser.json());
@@ -29,7 +34,7 @@ User.hasOne(UserDetails);
 
 UserDetails.belongsTo(User);
 
-app.listen(process.env.PORT, () => {
+httpServer.listen(process.env.PORT, () => {
 	sequelize
 		.sync()
 		.then(() => {
